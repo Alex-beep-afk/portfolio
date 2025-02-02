@@ -7,35 +7,66 @@
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
+    <video class="video_background" autoplay muted loop src="10296176-hd_1920_1080_25fps.mp4"  type="video/mp4"></video>
     <main>
         
-    <section>
-    <button onclick= "basculerElement('infos')">Profil</button>
-    <button onclick="basculerElement('cv')">Experiences</button>
-    <button onclick="basculerElement('diplomes')">Diplomes</button>
-    <button onclick="basculerElement('bonus')">Bonus</button>
+    <section id = boutons >
+    <button class="bouton" onclick="basculerElement('profil', this)" >Profil</button>
+    <button class="bouton" onclick="basculerElement('experiences', this)">Experiences</button>
+    <button class="bouton" onclick="basculerElement('diplomes', this)">Diplomes</button>
+    <button class="bouton" onclick="basculerElement('bonus', this)">Bonus</button>
     </section>
 
- 
-    <img id=cv style = display:none src="Copie de Alexandre Prigent1.jpg" alt="CV">
+    
+    
     
      
-    <section id = infos>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    <section id = profil style = display:none >
+        <article>
+            <div>
+            <h3>Alexandre Prigent</h3>
+            <img src="Alex.jpg" alt="moi">
+            
+            </div>
+            <div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Fugit a odio eveniet, corrupti non vitae consequatur veritatis minus. 
+                    Obcaecati omnis mollitia sapiente ratione sunt, natus et praesentium voluptate. 
+                    Dolores, quam.
+                </p>
+            </div>
+        </article>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Consequuntur ratione repellendus 
-        fugiat natus! Corrupti facere earum voluptas totam recusandae 
-        et atque autem eum dolor odit, cum vel expedita. Accusamus, provident!  
+        fugiat natus. Corrupti facere earum voluptas totam recusandae 
+        et atque autem eum dolor odit, cum vel expedita. Accusamus, provident!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Totam recusandae harum beatae voluptatem ad molestiae debitis corporis aliquam dignissimos, 
+        quia nam saepe quis optio ut? Consequatur provident reprehenderit esse vel.
+        </p>
+        
     </section >
-    <section id = diplomes>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+
+    <section id = experiences style="display: none">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis pariatur totam inventore suscipit! 
+        Illo quaerat sequi repellendus labore harum alias eum voluptatibus aperiam nesciunt, 
+        sunt quam explicabo laboriosam excepturi dolorem!</p>
+    </section>
+
+    <section id = diplomes style = display:none> 
+        <p>pariatur lorem ipsum dolor sit amet, consectetur adipisicing elit. 
         Alias maxime nobis aperiam tempore beatae officia totam illo sed sequi 
         repudiandae maiores itaque accusamus sit, nam rem molestias laborum, quia expedita?
+        </p>
+        
     </section>
-    <section id = bonus>
-        Lorem ipsum dolor sit amet consectetur 
+    <section id = bonus style = display:none> 
+        <p>  Lorem ipsum dolor sit amet consectetur 
         adipisicing elit. Optio consequatur voluptatem nesciunt rem placeat dicta aspernatur, 
         ipsum iusto, nobis repudiandae veritatis earum magni cumque voluptatum 
-        accusantium odio eius suscipit nisi.
+        accusantium odio eius suscipit nisi.</p>
+      
     </section>
     
 

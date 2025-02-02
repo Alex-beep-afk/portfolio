@@ -1,4 +1,4 @@
-/* Structure principale */
+
 *{
     margin:0;
     padding:0;
@@ -10,10 +10,22 @@ html,body{
     height: 100%;
     width: 100%;
     font-family: fantasy;
-    background-image: url(ivana-cajina-asuyh-_ZX54-unsplash.jpg);
     background-size: cover;
+    overflow: hidden;
     cursor: url(icons8-fusée-48\ \(1\).png), auto;
+    perspective: 1000px;
 }
+/* Gestion du fond video */
+.video_background{
+    position :absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    z-index : -1 ;
+}
+/* Structure principale */
 main{
     box-sizing: border-box;
     display: flex;
@@ -21,66 +33,100 @@ main{
     padding: 5rem;
     height : 100%;
     justify-content: space-around;
+    perspective: 1000px;
 }
-/* Differentes sections */
-main>:nth-child(1){
+/* Section bouton */
+#boutons{
     
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle, rgba(4, 2, 143, 0.747) 80%, rgba(2, 83, 158, 0.37) 100%);
-    border-radius: 25px;
-    box-shadow: inset 0 0 10px rgb(252, 251, 251);
-    box-shadow: rgb(85, 84, 84) 0 0 10px;
+ 
     
-}
-/* Section de CV */
-img{
-    border-radius: 25px;
-}
-/* Section d'infos */
-main>:nth-child(3){
-    display: none ;
-    box-sizing: border-box; 
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle, rgba(4, 2, 143, 0.747) 80%, rgba(2, 83, 158, 0.37) 100%);
-    border-radius: 25px;
-    box-shadow: inset 0 0 10px rgb(252, 251, 251);
-    box-shadow: rgb(85, 84, 84) 0 0 10px;
-    padding: 3rem;
-    color : whitesmoke;
+    transform : RotateX(0deg) RotateY(0deg) RotateZ(0deg);
+    transition: 1s ease-in-out;
     
 }
 
-main>:nth-child(4){
-    display: none ;
+/* Style géneral des fenetres */
+#experiences, #profil, #diplomes, #bonus{
     box-sizing: border-box; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: radial-gradient(circle, rgba(4, 2, 143, 0.747) 80%, rgba(2, 83, 158, 0.37) 100%);
     border-radius: 25px;
-    box-shadow: inset 0 0 10px rgb(252, 251, 251);
-    box-shadow: rgb(85, 84, 84) 0 0 10px;
-    padding: 3rem;
+    box-shadow: rgb(1, 255, 255) 0 0 10px;
+    padding: 0rem 1rem 1rem 1rem;
     color : whitesmoke;
+    transform-style: preserve-3d;
+
 }
-main>:nth-child(5){
-    display: none ;
-    box-sizing: border-box; 
+#experiences:hover, #diplomes:hover , 
+#bonus:hover ,#profil:hover{
+    transform: RotateX(0deg) rotateY(25deg);
+    transition: 1s ease;
+}
+p{
+    text-shadow: rgb(1, 255, 255) 0 0 10px;
+    color: aqua ;
+    font-size: 10px;
+    font-family: stray;
+}
+p:hover{
+    transform: translateZ(60px);
+    text-shadow: 2px 2px 4px rgba(243, 241, 241, 0.5);
+    transition: 1s ease-in-out;
+    font-family: fantasy ;
+    font-size : 15px;
+
+}
+
+/* Section profil */
+
+
+article{
+    display: flex;
+    align-items: center;
+    gap : 20px;
+    transform-style: preserve-3d;
+}
+ article > div:first-child{
+    display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle, rgba(4, 2, 143, 0.747) 80%, rgba(2, 83, 158, 0.37) 100%);
+    margin-bottom: 3.0rem;
+    transform-style: preserve-3d;
+    
+}
+img{
+    margin-top: 10px;
+    height: 200px;
     border-radius: 25px;
-    box-shadow: inset 0 0 10px rgb(252, 251, 251);
-    box-shadow: rgb(85, 84, 84) 0 0 10px;
-    padding: 3rem;
-    color : whitesmoke;
+    box-shadow: rgb(1, 255, 255) 0 0 10px;
+    
+}
+img:hover{
+    transform: translateZ(60px);
+    transition: 1.5s ease;
+}
+h3{
+    font-family : stray;
+    text-shadow: rgb(1, 255, 255) 0 0 10px;
+    color: aqua ;
+    
+
+}
+h3:hover{
+    transform: translateZ(60px);
+    transition: 1s ease;
+
+}
+article>:nth-child(2){
+    transform-style: preserve-3d;
+
 }
 
 /* boutton de navigation */
@@ -92,18 +138,25 @@ button{
     margin : 1rem 1rem ;
     border-radius: 1rem;
     box-shadow :rgb(252, 251, 251) 0 0 10px;
-    background: radial-gradient(circle, rgba(4, 2, 143, 0.747) 70%, rgba(2, 83, 158, 0.37) 100%);
+    background: radial-gradient(circle, rgba(4, 99, 187, 0.747) 70%, rgba(2, 83, 158, 0.37) 100%);
     color : aliceblue;
-    font-family: fantasy;
-    font-size: 1.3rem;
+    font-family: stray;
+    font-size: 1.1rem;
     border : none;
     transition: background-color 0.3s ease;
 
 }
 button:hover{
     background-color: rgb(103, 161, 214);
-    cursor: url(icons8-fusée-48.png), auto;
+    font-family: fantasy;
+    transform : RotateX(0deg) RotateY(360deg) RotateZ(0deg);
+    transition: 1.5s ease;
     
+}
+.bouton.enfonce{
+    transform : translateY(-10px);
+    background-color: rgb(3, 10, 75);
+    background: none;
 }
 
 /* Classes caché ou visible */
