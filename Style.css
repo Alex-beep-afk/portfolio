@@ -1,4 +1,49 @@
+@keyframes apparition{
+    from{
+        opacity: 0;
+        transform : rotateX(0deg) ;
+    }
+    to{
+        opacity: 1;
+        transform: rotateX(20deg)rotateY(0deg);
+    }
+}
+@keyframes twist{
+    from{
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(360deg);
+    }
+}
+@keyframes monter{
+    from{
+        transform: translateZ(0px);
+    }
+    to{
+        transform: translateZ(80px)
+    }
+}
+@keyframes textanim{
+    from{ 
+        transform:translateZ(0px);
+  
+    }
+    to {
+        transform: translateZ(60px);
+        
+    }
 
+}
+@keyframes slide{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(100px);
+    }
+}
+/* Fin des animations */
 *{
     margin:0;
     padding:0;
@@ -12,7 +57,7 @@ html,body{
     font-family: fantasy;
     background-size: cover;
     overflow: hidden;
-    cursor: url(icons8-fusée-48\ \(1\).png), auto;
+    cursor: url(icons8-fusée-48.png), auto;
     perspective: 1000px;
 }
 /* Gestion du fond video */
@@ -35,22 +80,9 @@ main{
     justify-content: space-around;
     perspective: 1000px;
 }
-/* Section bouton */
-#boutons{
-    
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
- 
-    
-    transform : RotateX(0deg) RotateY(0deg) RotateZ(0deg);
-    transition: 1s ease-in-out;
-    
-}
 
-/* Style géneral des fenetres */
+
+/* Style géneral des card infos */
 #experiences, #profil, #diplomes, #bonus{
     box-sizing: border-box; 
     flex-direction: column;
@@ -62,12 +94,14 @@ main{
     padding: 0rem 1rem 1rem 1rem;
     color : whitesmoke;
     transform-style: preserve-3d;
+    animation : 1s ease-in-out forwards apparition;
 
 }
+/*hover card_infos*/
 #experiences:hover, #diplomes:hover , 
-#bonus:hover ,#profil:hover{
-    transform: RotateX(0deg) rotateY(25deg);
-    transition: 1s ease;
+#bonus:hover , #profil:hover{
+    animation: 1s ease-in-out forwards monter;
+    
 }
 p{
     text-shadow: rgb(1, 255, 255) 0 0 10px;
@@ -76,24 +110,22 @@ p{
     font-family: stray;
 }
 p:hover{
-    transform: translateZ(60px);
+    font-family: fantasy;
+    font-size: 15px;
+    animation:  1s ease-in-out forwards textanim;
     text-shadow: 2px 2px 4px rgba(243, 241, 241, 0.5);
-    transition: 1s ease-in-out;
-    font-family: fantasy ;
-    font-size : 15px;
+    
 
 }
 
 /* Section profil */
-
-
 article{
     display: flex;
     align-items: center;
     gap : 20px;
     transform-style: preserve-3d;
 }
- article > div:first-child{
+article > div:first-child{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -109,7 +141,7 @@ img{
     
 }
 img:hover{
-    transform: translateZ(60px);
+    transform: translateZ(60px) rotateY(360deg);
     transition: 1.5s ease;
 }
 h3{
@@ -129,7 +161,17 @@ article>:nth-child(2){
 
 }
 
-/* boutton de navigation */
+
+/* Section bouton */
+#boutons{
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
 
 button{
     box-sizing: border-box;
@@ -149,8 +191,8 @@ button{
 button:hover{
     background-color: rgb(103, 161, 214);
     font-family: fantasy;
-    transform : RotateX(0deg) RotateY(360deg) RotateZ(0deg);
-    transition: 1.5s ease;
+    animation: 1s ease-in-out forwards twist;
+
     
 }
 .bouton.enfonce{
