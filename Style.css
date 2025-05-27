@@ -30,7 +30,7 @@
   
     }
     to {
-        transform: translateZ(60px);
+        transform: translateZ();
         
     }
 
@@ -40,7 +40,7 @@
         transform: translateX(0px);
     }
     to{
-        transform: translateX(100px);
+        transform: translateX(300%);
     }
 }
 /* Fin des animations */
